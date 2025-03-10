@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Hero
   layers:
   - Default
   - TransparentFX
@@ -11,13 +12,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Zombie_1
+  - Zombie_2
+  - Zombie_3
+  - Line_1
+  - Line_2
+  - Line_3
+  - Tower
   - 
   - 
   - 
