@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56e37ea34494db78f7daac8b21156c1, type: 3}
+  m_Name: GlobalBalanceSetting
+  m_EditorClassIdentifier: 
+  attackSpeed: 1
+  attackRange: 20
+  projectileSpeed: 10
+  zombieSpeed: 2
+  zombieClimbingForce: 4.5
+  zombiePushForce: 0.5
+  zombieClimbingCooldown: 1
+  zombieCollisionTolerance: 0.1
+  zombieSpawnCount: 20
+  statDatas:
+  - unitType: 0
+    health: 200
+    damage: 8
+  - unitType: 1
+    health: 200
+    damage: 0
+  - unitType: 2
+    health: 40
+    damage: 2

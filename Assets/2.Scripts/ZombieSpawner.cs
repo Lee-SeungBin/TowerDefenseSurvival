@@ -6,10 +6,17 @@ public class ZombieSpawner : MonoBehaviour
     [SerializeField] private Zombie zombiePrefab;
     [SerializeField] private float spawnInterval;
     [SerializeField] private bool isSpawn;
+    [SerializeField] private bool oneLineSpawn;
     [SerializeField] private List<SpawnInfo> spawnInfos;
-    
-    private float m_ElapsedTime;
 
+    private float m_ElapsedTime;
+    private int m_CurrentSpawnCount;
+    
+    private void Start()
+    {
+        isSpawn = true;
+    }
+    
     private void Update()
     {
         if (!isSpawn)
@@ -27,9 +34,16 @@ public class ZombieSpawner : MonoBehaviour
 
     private void SpawnZombie()
     {
-        var spawnInfo = spawnInfos[Random.Range(0, spawnInfos.Count)];
+        var spawnInfo = oneLineSpawn ? spawnInfos[0] : spawnInfos[Random.Range(0, spawnInfos.Count)];
         var zombieInstance = Instantiate(zombiePrefab, spawnInfo.spawnPosition, Quaternion.identity);
         zombieInstance.SetZombie(spawnInfo);
+        m_CurrentSpawnCount++;
+
+        if (m_CurrentSpawnCount >= Data.Database.GlobalBalanceSetting.zombieSpawnCount)
+        {
+            isSpawn = false;
+            m_CurrentSpawnCount = 0;
+        }
     }
     
     [System.Serializable]
